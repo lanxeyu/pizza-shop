@@ -1,4 +1,4 @@
-import { Menu } from "./pages";
+import { Cart } from "./pages";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <Menu></Menu>
+      <Cart></Cart>
     </>
   )
 }

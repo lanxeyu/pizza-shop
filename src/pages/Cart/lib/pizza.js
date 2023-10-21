@@ -3,7 +3,7 @@ let cart = []
 
 class Pizza {
     constructor() {
-        this.size = 'large'
+        this.size = 'Medium'
         this.toppings = {
             anchovies: false,
             bacon: false,
@@ -28,7 +28,6 @@ class Pizza {
         if (index !== -1) {
             cart.splice(index, 1)
         }
-        console.log('removed')
     }
     
     toggleTopping(toppingName) {
@@ -45,15 +44,15 @@ class Pizza {
 
     calculatePrice() {
         const basePrice = {
-            small: 6.99,
-            medium: 8.99,
-            large: 11.99
+            Small: 6.99,
+            Medium: 8.99,
+            Large: 11.99
         }[this.size] || 0
     
         const includedToppings = {
-            small: 2,
-            medium: 3,
-            large: 5
+            Small: 2,
+            Medium: 3,
+            Large: 5
         }[this.size] || 0
     
         const selectedToppingsCount = Object.values(this.toppings).filter(topping => topping).length
