@@ -16,6 +16,7 @@ class Pizza {
             pineapple: false,
             sausage: false
         }
+        this.name = this.generateRandomName()
         this.addToCart()
     }
 
@@ -28,6 +29,16 @@ class Pizza {
         if (index !== -1) {
             cart.splice(index, 1)
         }
+    }
+
+    generateRandomName() {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let randomName = '';
+        for (let i = 0; i < 3; i++) {
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            randomName += characters.charAt(randomIndex);
+        }
+        return randomName;
     }
     
     toggleTopping(toppingName) {
