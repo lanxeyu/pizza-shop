@@ -1,9 +1,12 @@
+import { Menu } from "./pages";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
 
 
   return (
     <>
-      Test
+      <Menu></Menu>
     </>
   )
 }
