@@ -11,7 +11,7 @@ const EditPizza = ({ pizza }) => {
 
   const [selectedToppings, setSelectedToppings] = useState(Object.keys(pizza.toppings).filter(topping => pizza.toppings[topping]));
 
-  const handleToppingChange = (toppingName) => {
+  const handleChangeToppings = (toppingName) => {
     const updatedToppings = [...selectedToppings];
 
     if (updatedToppings.includes(toppingName)) {
@@ -59,7 +59,7 @@ const EditPizza = ({ pizza }) => {
 
           {/* Dynamically generate toppings buttons */}
           {Object.keys(pizza.toppings).map((topping, index) => (
-            <ToggleButton key={index} id={`tbg-check-${index}`} value={topping} onClick={() => handleToppingChange(topping)} variant="primary">
+            <ToggleButton key={index} id={`tbg-check-${index}`} value={topping} onClick={() => handleChangeToppings(topping)} variant="primary">
               {topping}
             </ToggleButton>
           ))}
