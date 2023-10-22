@@ -67,7 +67,7 @@ function Cart() {
 
             {/* Edit pizza modal */}
             <Button onClick={() => handleShowEditModal(index)}>Edit</Button>
-            <Modal show={show[index]} onHide={handleClose} backdrop="static" keyboard={false}>
+            <Modal show={show[index]} onHide={handleClose} backdrop="static" keyboard={false} aria-labelledby="contained-modal-title-vcenter" centered>
               <Modal.Body>
                 <EditPizza pizza={pizza}></EditPizza>
               </Modal.Body>
