@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { generateRandom8DigitNumber } from '../../utilities/order';
+import { generateRandom8DigitNumber } from '../../utilities/script';
 
 
 const Confirmation = ({ order }) => {

@@ -1,5 +1,3 @@
-
-
 function generateRandom8DigitNumber() {
     const min = 10000000; 
     const max = 99999999;
