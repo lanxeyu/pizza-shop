@@ -7,13 +7,13 @@ import Modal from 'react-bootstrap/Modal';
 
 function Cart() {
   const [cart, setCart] = useState([]);
-  const [show, setShow] = useState([]);
+  const [show, setShowEditModal] = useState([]);
   const [selectedPizzaIndex, setSelectedPizzaIndex] = useState(null);
 
   const handleAddPizza = () => {
     const pizza = new Pizza();
     setCart((prevCart) => [...prevCart, pizza]);
-    setShow((prevShow) => [...prevShow, false]);
+    setShowEditModal((prevShowEditModal) => [...prevShowEditModal, false]);
   }
 
   const removeFromCart = (index) => {
@@ -22,28 +22,28 @@ function Cart() {
       updatedCart.splice(index, 1);
       return updatedCart;
     });
-    setShow((prevShow) => {
-      const updatedShow = [...prevShow];
-      updatedShow.splice(index, 1);
-      return updatedShow;
+    setShowEditModal((prevShowEditModal) => {
+      const updatedShowEditModal = [...prevShowEditModal];
+      updatedShowEditModal.splice(index, 1);
+      return updatedShowEditModal;
     });
   }
 
   const handleClose = () => {
-    setShow((prevShow) => {
-      const updatedShow = [...prevShow];
-      updatedShow[selectedPizzaIndex] = false;
-      return updatedShow;
+    setShowEditModal((prevShowEditModal) => {
+      const updatedShowEditModal = [...prevShowEditModal];
+      updatedShowEditModal[selectedPizzaIndex] = false;
+      return updatedShowEditModal;
     });
     setSelectedPizzaIndex(null);
   }
 
-  const handleShow = (index) => {
+  const handleShowEditModal = (index) => {
     setSelectedPizzaIndex(index);
-    setShow((prevShow) => {
-      const updatedShow = [...prevShow];
-      updatedShow[index] = true;
-      return updatedShow;
+    setShowEditModal((prevShowEditModal) => {
+      const updatedShowEditModal = [...prevShowEditModal];
+      updatedShowEditModal[index] = true;
+      return updatedShowEditModal;
     });
   }
 
@@ -61,7 +61,7 @@ function Cart() {
 
 
             {/* Edit pizza modal */}
-            <Button onClick={() => handleShow(index)}>Edit</Button>
+            <Button onClick={() => handleShowEditModal(index)}>Edit</Button>
             <Modal show={show[index]} onHide={handleClose} backdrop="static" keyboard={false}>
               <Modal.Header>
                 <Modal.Title>Edit this pizza</Modal.Title>
@@ -82,7 +82,6 @@ function Cart() {
           </div>
         ))}
 
-      
 
       </div>
     </>
