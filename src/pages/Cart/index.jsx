@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Pizza } from '../../lib/pizza';
+import { Pizza } from '../../utilities/pizza';
 import { CheckoutFooter, EditPizza } from '../../components';
 import Button from 'react-bootstrap/Button';
 import CloseButton from 'react-bootstrap/CloseButton';

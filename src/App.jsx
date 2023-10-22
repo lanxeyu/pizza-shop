@@ -8,7 +8,6 @@ function App() {
     <Routes>
       <Route path="/" element={<Header />}>
         <Route index element={<Pages.Cart />} />
-        <Route path="checkout" element={<Pages.Checkout />} />
         <Route path="*" element={<Pages.NotFound />} />
       </Route>
     </Routes>
