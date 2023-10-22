@@ -4,16 +4,16 @@ class Pizza {
     constructor() {
         this.size = 'Medium'
         this.toppings = {
-            anchovies: false,
-            bacon: false,
-            ham: false,
-            mushrooms: false,
-            olives: false,
-            onions: false,
-            pepperoni: false,
-            peppers: false,
-            pineapple: false,
-            sausage: false
+            Anchovies: false,
+            Bacon: false,
+            Ham: false,
+            Mushrooms: false,
+            Olives: false,
+            Onions: false,
+            Pepperoni: false,
+            Peppers: false,
+            Pineapple: false,
+            Sausage: false
         }
         this.name = this.generateRandomName()
         this.addToCart()
