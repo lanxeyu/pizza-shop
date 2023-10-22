@@ -1,4 +1,3 @@
-
 let cart = []
 
 class Pizza {
@@ -8,7 +7,7 @@ class Pizza {
             anchovies: false,
             bacon: false,
             ham: false,
-            mushroom: false,
+            mushrooms: false,
             olives: false,
             onions: false,
             pepperoni: false,
@@ -41,14 +40,6 @@ class Pizza {
         return randomName;
     }
     
-    toggleTopping(toppingName) {
-        if (toppingName in this.toppings) {
-            this.toppings[toppingName] = !this.toppings[toppingName]
-        } else {
-            console.log(`Topping '${toppingName}' does not exist.`)
-        }
-    }
-
     changeSize(size) {
         this.size = size
     }

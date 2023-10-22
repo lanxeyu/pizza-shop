@@ -58,12 +58,12 @@ function Cart() {
         {cart.map((pizza, index) => (
           <div key={index}>
             <h3>Pizza {pizza.name}</h3>
-            
+
 
             {/* Edit pizza modal */}
             <Button onClick={() => handleShow(index)}>Edit</Button>
             <Modal show={show[index]} onHide={handleClose} backdrop="static" keyboard={false}>
-              <Modal.Header closeButton>
+              <Modal.Header>
                 <Modal.Title>Edit this pizza</Modal.Title>
               </Modal.Header>
               <Modal.Body>
