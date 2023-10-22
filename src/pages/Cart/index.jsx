@@ -49,7 +49,6 @@ function Cart() {
     });
   }
 
-  const totalCartPrice = cart.reduce((total, pizza) => total + parseFloat(pizza.getPizzaDetails().pizzaPrice), 0);
   console.log('Cart', cart)
 
   return (
@@ -87,7 +86,7 @@ function Cart() {
 
       
       <div className='checkoutFooter'>
-        <CheckoutFooter totalCartPrice={totalCartPrice}/>
+        <CheckoutFooter cart={cart}/>
       </div>
     </>
   );
