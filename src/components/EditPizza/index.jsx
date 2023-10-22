@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 
-const Edit = ({ pizza }) => {
+const EditPizza = ({ pizza }) => {
 
   const handleChangeSize = (size) => {
     pizza.changeSize(size);
@@ -70,8 +70,8 @@ const Edit = ({ pizza }) => {
   );
 }
 
-Edit.propTypes = {
-  pizza: PropTypes.object.isRequired,
+EditPizza.propTypes = {
+  pizza: PropTypes.object.isRequired
 };
 
-export default Edit;
+export default EditPizza;

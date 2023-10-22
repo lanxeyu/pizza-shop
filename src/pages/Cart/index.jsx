@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Pizza } from '../../lib/pizza';
-import { Edit } from '../../components';
+import { CheckoutFooter, EditPizza } from '../../components';
 import Button from 'react-bootstrap/Button';
 import CloseButton from 'react-bootstrap/CloseButton';
 import Modal from 'react-bootstrap/Modal';
+import './style.css'
 
 function Cart() {
+
   const [cart, setCart] = useState([]);
   const [show, setShowEditModal] = useState([]);
   const [selectedPizzaIndex, setSelectedPizzaIndex] = useState(null);
@@ -47,14 +49,17 @@ function Cart() {
     });
   }
 
+  const totalCartPrice = cart.reduce((total, pizza) => total + parseFloat(pizza.getPizzaDetails().pizzaPrice), 0);
+  console.log('Cart', totalCartPrice)
+
   return (
     <>
       <Button onClick={handleAddPizza}>Add Pizza</Button>
 
-      <div>
+      <div className='cart'>
         <h2>Cart:</h2>
 
-        {/* Pizza list */}
+        {/* Dynamically generate pizza list */}
         {cart.map((pizza, index) => (
           <div key={index}>
             <h3>Pizza {pizza.name}</h3>
@@ -63,11 +68,8 @@ function Cart() {
             {/* Edit pizza modal */}
             <Button onClick={() => handleShowEditModal(index)}>Edit</Button>
             <Modal show={show[index]} onHide={handleClose} backdrop="static" keyboard={false}>
-              <Modal.Header>
-                <Modal.Title>Edit this pizza</Modal.Title>
-              </Modal.Header>
               <Modal.Body>
-                <Edit pizza={pizza}></Edit>
+                <EditPizza pizza={pizza}></EditPizza>
               </Modal.Body>
               <Modal.Footer>
                 <Button onClick={handleClose}>Save</Button>
@@ -81,8 +83,11 @@ function Cart() {
             <CloseButton onClick={() => removeFromCart(index)} />
           </div>
         ))}
+      </div>
 
-
+      
+      <div className='checkoutFooter'>
+        <CheckoutFooter totalCartPrice={totalCartPrice}/>
       </div>
     </>
   );

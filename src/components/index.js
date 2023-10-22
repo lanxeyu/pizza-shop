@@ -1,1 +1,2 @@
-export { default as Edit } from "./Edit";
+export { default as EditPizza } from "./EditPizza";
+export { default as CheckoutFooter } from "./CheckoutFooter";
