@@ -16,11 +16,13 @@ const CheckoutFooter = ({ cart }) => {
   const handleShow = () => setShow(true);
 
   const totalCartPrice = cart.reduce((total, pizza) => total + parseFloat(pizza.getPizzaDetails().pizzaPrice), 0);
+  const revenue = totalCartPrice.toFixed(2)
 
   const handlePlaceOrder = () => {
     const newOrder = {
       cart,
-      notes,
+      revenue,
+      notes
     };
     setOrder(newOrder);
     handleShow();
