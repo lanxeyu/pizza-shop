@@ -50,18 +50,19 @@ function Cart() {
   return (
     <>
       <Button onClick={handleAddPizza}>Add Pizza</Button>
+
       <div>
         <h2>Cart:</h2>
+
+        {/* Pizza list */}
         {cart.map((pizza, index) => (
           <div key={index}>
             <h3>Pizza {pizza.name}</h3>
+            
+
+            {/* Edit pizza modal */}
             <Button onClick={() => handleShow(index)}>Edit</Button>
-            <Modal
-              show={show[index]}
-              onHide={handleClose}
-              backdrop="static"
-              keyboard={false}
-            >
+            <Modal show={show[index]} onHide={handleClose} backdrop="static" keyboard={false}>
               <Modal.Header closeButton>
                 <Modal.Title>Edit this pizza</Modal.Title>
               </Modal.Header>
@@ -73,12 +74,14 @@ function Cart() {
               </Modal.Footer>
             </Modal>
             
+
             <p>Size: {pizza.size}</p>
             <p>Toppings: {pizza.getPizzaDetails().toppings.join(', ')}</p>
             <p>Price: £{pizza.getPizzaDetails().pizzaPrice}</p>
             <CloseButton onClick={() => removeFromCart(index)} />
           </div>
         ))}
+
       </div>
     </>
   );
