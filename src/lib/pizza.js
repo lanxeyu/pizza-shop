@@ -23,13 +23,6 @@ class Pizza {
         cart.push(this)
     }
 
-    removeFromCart() {
-        const index = cart.indexOf(this)
-        if (index !== -1) {
-            cart.splice(index, 1)
-        }
-    }
-
     generateRandomName() {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         let randomName = '';
