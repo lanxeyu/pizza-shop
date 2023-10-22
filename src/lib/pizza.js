@@ -1,5 +1,3 @@
-let cart = []
-
 class Pizza {
     constructor() {
         this.size = 'Medium'
@@ -16,11 +14,6 @@ class Pizza {
             Sausage: false
         }
         this.name = this.generateRandomName()
-        this.addToCart()
-    }
-
-    addToCart() {
-        cart.push(this)
     }
 
     generateRandomName() {
