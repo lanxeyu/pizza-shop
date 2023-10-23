@@ -7,7 +7,7 @@ function Header() {
     <>
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
-                <Navbar.Brand>Pluto&apos;s Pizza</Navbar.Brand>
+                <Navbar.Brand><h1>Pluto&apos;s Pizza</h1></Navbar.Brand>
             </Container>
         </Navbar>
         <Outlet/>

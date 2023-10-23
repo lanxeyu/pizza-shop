@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import { availableToppings } from '../../utilities/script';
+import './style.css'
 
 const EditPizza = ({ pizza }) => {
+  const [selectedSize, setSelectedSize] = useState(pizza.size);
+  const [selectedToppings, setSelectedToppings] = useState(pizza.toppings);
 
   const handleChangeSize = (size) => {
     pizza.changeSize(size);
   };
-
-  const [selectedToppings, setSelectedToppings] = useState(pizza.toppings);
 
   const handleChangeToppings = (toppingName) => {
     const updatedToppings = [...selectedToppings];
@@ -22,7 +23,6 @@ const EditPizza = ({ pizza }) => {
     }
 
     setSelectedToppings(updatedToppings);
-
     pizza.toppings = updatedToppings;
   };
 
@@ -32,23 +32,29 @@ const EditPizza = ({ pizza }) => {
 
 
       {/* Size selector */}
-      <div>        
-        <ToggleButtonGroup type="radio" name="options" defaultValue={pizza.size}>
-          <ToggleButton id="tbg-radio-1" value={'Small'} onClick={() => handleChangeSize('Small')}>
-            Small
+      <h4 className="selector-titles">Size</h4>
+      <div className="size-selector">
+        <ToggleButtonGroup type="radio" name="options" value={selectedSize} onChange={(value) => {
+            setSelectedSize(value);
+            handleChangeSize(value);
+          }}>
+          <ToggleButton id="tbg-radio-1" value={'Small'}>
+            Small<br></br>2 toppings<br></br>£6.99
           </ToggleButton>
-          <ToggleButton id="tbg-radio-2" value={'Medium'} onClick={() => handleChangeSize('Medium')}>
-            Medium
+          <ToggleButton id="tbg-radio-2" value={'Medium'}>
+            Medium<br></br>3 toppings<br></br>£8.99
           </ToggleButton>
-          <ToggleButton id="tbg-radio-3" value={'Large'} onClick={() => handleChangeSize('Large')}>
-            Large
+          <ToggleButton id="tbg-radio-3" value={'Large'}>
+            Large<br></br>5 toppings<br></br>£11.99
           </ToggleButton>
         </ToggleButtonGroup>
       </div>
 
 
       {/* Toppings selector */}
-      <div>
+      <h4 className='selector-titles'>Toppings</h4>
+      <p className='selector-titles'>(£1.49 per extra)</p>
+      <div className='toppings-selector'>
         <ToggleButtonGroup vertical type="checkbox" value={selectedToppings} onChange={() => {}} className="mb-2">
 
           {/* Dynamically generate toppings buttons */}
@@ -60,6 +66,9 @@ const EditPizza = ({ pizza }) => {
         </ToggleButtonGroup>
       </div>
 
+      <div className='pizza-price'>
+        <h4>£{pizza.calculatePrice()}</h4>
+      </div>
     </>
   );
 }

@@ -6,7 +6,6 @@ import Modal from 'react-bootstrap/Modal';
 import Confirmation from '../Confirmation';
 import Form from 'react-bootstrap/Form';
 import { generateRandom8DigitNumber, runSendOrderDataToApi } from '../../utilities/script';
-import './style.css';
 
 const CheckoutFooter = ({ cart }) => {
   const [show, setShow] = useState(false);
@@ -37,15 +36,15 @@ const CheckoutFooter = ({ cart }) => {
     <Card className="text-center">
       <Card.Body>
 
-        <div className="checkout-footer">
-          <div className="form">
+        <div className="checkout-footer row">
+          <div className="col-md-8">
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
               <Form.Label>Allergy information & special notes:</Form.Label>
               <Form.Control as="textarea" rows={3} value={notes} onChange={(e) => setNotes(e.target.value)}/>
             </Form.Group>
           </div>
 
-          <div>
+          <div className="col-md-4">
             <Card.Title>Total: £{totalCartPrice.toFixed(2)}</Card.Title>
             <Button onClick={handlePlaceOrder} variant="primary">Place Order</Button>
           </div>

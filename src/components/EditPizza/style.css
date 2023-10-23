@@ -1,0 +1,20 @@
+.selector-titles {
+    display: flex;
+    justify-content: center;
+}
+
+.size-selector {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.toppings-selector {
+    display: flex;
+    justify-content: center;
+}
+
+.pizza-price {
+    display: flex;
+    justify-content: right;
+}

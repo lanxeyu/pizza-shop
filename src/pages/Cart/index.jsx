@@ -54,33 +54,38 @@ function Cart() {
     <Card className="text-center">
       <Card.Body>
 
-        <Button onClick={handleAddPizza}>Add Pizza</Button>
+        <Button className="add-pizza-btn" onClick={handleAddPizza}>Add Pizza</Button>
+        <h3 className='cart-title'>Cart:</h3>
 
         <div className='cart'>
-          <h2>Cart:</h2>
+          
 
           {/* Dynamically generate pizza list */}
           {cart.map((pizza, index) => (
-            <div key={index}>
-              <h3>Pizza {pizza.name}</h3>
+            <div className='pizza-list' key={index}>
 
+              <div className='pizza-name-and-btns'>
+                <h3>Pizza {pizza.name}</h3>
+                
+                {/* Edit pizza modal */}
+                <Button onClick={() => handleShowEditModal(index)}>Edit</Button>
+                <Modal show={show[index]} onHide={handleClose} backdrop="static" keyboard={false} aria-labelledby="contained-modal-title-vcenter" centered>
+                  <Modal.Body>
+                    <EditPizza pizza={pizza}></EditPizza>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button onClick={handleClose}>Save</Button>
+                  </Modal.Footer>
+                </Modal>
 
-              {/* Edit pizza modal */}
-              <Button onClick={() => handleShowEditModal(index)}>Edit</Button>
-              <Modal show={show[index]} onHide={handleClose} backdrop="static" keyboard={false} aria-labelledby="contained-modal-title-vcenter" centered>
-                <Modal.Body>
-                  <EditPizza pizza={pizza}></EditPizza>
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button onClick={handleClose}>Save</Button>
-                </Modal.Footer>
-              </Modal>
-              
+                <CloseButton onClick={() => removeFromCart(index)} />
+              </div>
 
-              <p>Size: {pizza.size}</p>
-              <p>Toppings: {pizza.getPizzaDetails().toppings.join(', ')}</p>
-              <p>Price: £{pizza.getPizzaDetails().pizzaPrice}</p>
-              <CloseButton onClick={() => removeFromCart(index)} />
+              <div className='pizza-details'>
+                <p>Size: {pizza.size}</p>
+                <p>Toppings: {pizza.getPizzaDetails().toppings.join(', ')}</p>
+                <h6>Price: £{pizza.getPizzaDetails().pizzaPrice}</h6>
+              </div>
             </div>
           ))}
         </div>
