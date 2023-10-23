@@ -50,8 +50,6 @@ function Cart() {
     });
   }
 
-  console.log('Cart', cart)
-
   return (
     <Card className="text-center">
       <Card.Body>

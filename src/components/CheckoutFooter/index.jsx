@@ -5,8 +5,8 @@ import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
 import Confirmation from '../Confirmation';
 import Form from 'react-bootstrap/Form';
+import { generateRandom8DigitNumber, sendOrderDataToAPI } from '../../utilities/script';
 import './style.css';
-import { generateRandom8DigitNumber } from '../../utilities/script';
 
 const CheckoutFooter = ({ cart }) => {
   const [show, setShow] = useState(false);
@@ -27,11 +27,18 @@ const CheckoutFooter = ({ cart }) => {
       revenue,
       notes,
     };
-    setOrder(newOrder);
-    handleShow();
-  };
 
-  console.log('Order', order)
+    sendOrderDataToAPI(newOrder)
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
+        setOrder(newOrder);
+        handleShow();
+  };
 
   return (
     <Card className="text-center">
