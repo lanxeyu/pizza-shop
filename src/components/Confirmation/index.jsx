@@ -15,6 +15,7 @@ const Confirmation = ({ order }) => {
                 <p>Toppings: {pizza.getPizzaDetails().toppings.join(', ')}</p>
             </div>
             ))}
+            <h5>Total: £{order.revenue}</h5>
         </>
     )
 }
