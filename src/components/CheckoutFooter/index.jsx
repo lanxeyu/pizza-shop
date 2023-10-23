@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
 import Confirmation from '../Confirmation';
 import Form from 'react-bootstrap/Form';
-import { generateRandom8DigitNumber, sendOrderDataToAPI } from '../../utilities/script';
+import { generateRandom8DigitNumber, runSendOrderDataToApi } from '../../utilities/script';
 import './style.css';
 
 const CheckoutFooter = ({ cart }) => {
@@ -28,16 +28,9 @@ const CheckoutFooter = ({ cart }) => {
       notes,
     };
 
-    sendOrderDataToAPI(newOrder)
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-
-        setOrder(newOrder);
-        handleShow();
+    runSendOrderDataToApi(newOrder)
+    setOrder(newOrder);
+    handleShow();
   };
 
   return (
