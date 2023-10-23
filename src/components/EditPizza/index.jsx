@@ -2,6 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import { availableToppings } from '../../utilities/script';
 
 const EditPizza = ({ pizza }) => {
 
@@ -9,27 +10,20 @@ const EditPizza = ({ pizza }) => {
     pizza.changeSize(size);
   };
 
-  const [selectedToppings, setSelectedToppings] = useState(Object.keys(pizza.toppings).filter(topping => pizza.toppings[topping]));
+  const [selectedToppings, setSelectedToppings] = useState(pizza.toppings);
 
   const handleChangeToppings = (toppingName) => {
     const updatedToppings = [...selectedToppings];
 
     if (updatedToppings.includes(toppingName)) {
-      // Topping is already selected, so remove it
       updatedToppings.splice(updatedToppings.indexOf(toppingName), 1);
     } else {
-      // Topping is not selected, so add it
       updatedToppings.push(toppingName);
     }
 
     setSelectedToppings(updatedToppings);
 
-    // Update the pizza's toppings with the selected toppings
-    const newToppings = { ...pizza.toppings };
-    Object.keys(newToppings).forEach((topping) => {
-      newToppings[topping] = updatedToppings.includes(topping);
-    });
-    pizza.toppings = newToppings;
+    pizza.toppings = updatedToppings;
   };
 
   return (
@@ -58,7 +52,7 @@ const EditPizza = ({ pizza }) => {
         <ToggleButtonGroup vertical type="checkbox" value={selectedToppings} onChange={() => {}} className="mb-2">
 
           {/* Dynamically generate toppings buttons */}
-          {Object.keys(pizza.toppings).map((topping, index) => (
+          {availableToppings.map((topping, index) => (
             <ToggleButton key={index} id={`tbg-check-${index}`} value={topping} onClick={() => handleChangeToppings(topping)} variant="primary">
               {topping}
             </ToggleButton>

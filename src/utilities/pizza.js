@@ -1,19 +1,8 @@
 class Pizza {
     constructor() {
-        this.size = 'Medium'
-        this.toppings = {
-            Anchovies: false,
-            Bacon: false,
-            Ham: false,
-            Mushrooms: false,
-            Olives: false,
-            Onions: false,
-            Pepperoni: false,
-            Peppers: false,
-            Pineapple: false,
-            Sausage: false
-        }
-        this.name = this.generateRandomName()
+        this.size = 'Medium';
+        this.toppings = [];
+        this.name = this.generateRandomName();
     }
 
     generateRandomName() {
@@ -52,11 +41,10 @@ class Pizza {
     }
     
     getPizzaDetails() {
-        const selectedToppings = Object.keys(this.toppings).filter(topping => this.toppings[topping])
 
         return {
             size: this.size,
-            toppings: selectedToppings,
+            toppings: this.toppings,
             pizzaPrice: this.calculatePrice().toFixed(2)
         }
     }

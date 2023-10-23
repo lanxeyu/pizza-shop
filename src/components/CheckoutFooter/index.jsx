@@ -6,6 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 import Confirmation from '../Confirmation';
 import Form from 'react-bootstrap/Form';
 import './style.css';
+import { generateRandom8DigitNumber } from '../../utilities/script';
 
 const CheckoutFooter = ({ cart }) => {
   const [show, setShow] = useState(false);
@@ -17,12 +18,14 @@ const CheckoutFooter = ({ cart }) => {
 
   const totalCartPrice = cart.reduce((total, pizza) => total + parseFloat(pizza.getPizzaDetails().pizzaPrice), 0);
   const revenue = totalCartPrice.toFixed(2)
+  const order_number = generateRandom8DigitNumber()
 
   const handlePlaceOrder = () => {
     const newOrder = {
+      order_number,
       cart,
       revenue,
-      notes
+      notes,
     };
     setOrder(newOrder);
     handleShow();
