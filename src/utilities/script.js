@@ -35,6 +35,6 @@ function sendOrderDataToAPI(orderData) {
     })
       .then((response) => response.json());
 }
-  
+
 
 export { availableToppings, generateRandom8DigitNumber, getCurrentDateTime, sendOrderDataToAPI }
