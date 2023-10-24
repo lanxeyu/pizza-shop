@@ -11,9 +11,10 @@
     margin: 0 auto;
 }
 
-.add-pizza-btn {
+button.add-pizza-btn {
     position: fixed;
     right: 16vw;
+    font-size: 25px;
 }
 
 .cart-title {
