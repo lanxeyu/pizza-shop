@@ -82,9 +82,13 @@ function Cart() {
               </div>
 
               <div className='pizza-details'>
-                <p>Size: {pizza.size}</p>
-                <p>Toppings: {pizza.getPizzaDetails().toppings.join(', ')}</p>
-                <h6>Price: £{pizza.getPizzaDetails().pizzaPrice}</h6>
+                <p><b>Size:</b> {pizza.size}</p>
+                {pizza.getPizzaDetails().toppings.length > 0 ? (
+                    <p><b>Toppings:</b> {pizza.getPizzaDetails().toppings.join(', ')}</p>
+                  ) : (
+                    <p><b>Toppings:</b> No toppings selected</p>
+                  )}
+                <h5>£{pizza.getPizzaDetails().pizzaPrice}</h5>
               </div>
             </div>
           ))}
