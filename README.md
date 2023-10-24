@@ -1,13 +1,13 @@
 # Pluto's Pizza
-This is the frontend repo for a pizza ordering app.
+This is the frontend website for a pizza ordering app.
 
 [Backend Repo](https://github.com/lanxeyu/plutos-pizza-server)
-## How to Run:
-1. Clone this repo
-2. `npm install`
-3. `npm run dev`
-4. Navigate to [localhost:5173](http://localhost:5173/)
 
+## How to Run:
+1. Clone this repo: `git clone git@github.com:lanxeyu/plutos-pizza-client.git`
+2. Install dependencies: `npm install`
+3. Start the website: `npm run dev`
+4. Navigate to [localhost:5173](http://localhost:5173/)
 
 ## Future improvements:
 ### Code
