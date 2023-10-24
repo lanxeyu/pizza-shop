@@ -39,13 +39,13 @@ const EditPizza = ({ pizza }) => {
             handleChangeSize(value);
           }}>
           <ToggleButton id="tbg-radio-1" value={'Small'}>
-            Small<br></br>2 toppings<br></br>£6.99
+            <h5>Small</h5>(2 toppings incl.)<br></br>+£6.99
           </ToggleButton>
           <ToggleButton id="tbg-radio-2" value={'Medium'}>
-            Medium<br></br>3 toppings<br></br>£8.99
+            <h5>Medium</h5>(3 toppings incl.)<br></br>+£8.99
           </ToggleButton>
           <ToggleButton id="tbg-radio-3" value={'Large'}>
-            Large<br></br>5 toppings<br></br>£11.99
+            <h5>Large</h5>(5 toppings incl.)<br></br>+£11.99
           </ToggleButton>
         </ToggleButtonGroup>
       </div>
@@ -53,7 +53,7 @@ const EditPizza = ({ pizza }) => {
 
       {/* Toppings selector */}
       <h4 className='selector-titles'>Toppings</h4>
-      <p className='selector-titles'>(£1.49 per extra)</p>
+      <p className='selector-titles'>+£1.49 per extra topping</p>
       <div className='toppings-selector'>
         <ToggleButtonGroup vertical type="checkbox" value={selectedToppings} onChange={() => {}} className="mb-2">
 
