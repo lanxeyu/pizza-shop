@@ -67,7 +67,7 @@ const EditPizza = ({ pizza }) => {
       </div>
 
       <div className='pizza-price'>
-        <h4>£{pizza.calculatePrice()}</h4>
+        <h4>£{pizza.calculatePrice().toFixed(2)}</h4>
       </div>
     </>
   );
