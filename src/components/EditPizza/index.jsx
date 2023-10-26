@@ -10,7 +10,7 @@ const EditPizza = ({ pizza }) => {
   const [selectedToppings, setSelectedToppings] = useState(pizza.toppings);
 
   const handleChangeSize = (size) => {
-    pizza.changeSize(size);
+    pizza.size = size;
   };
 
   const handleChangeToppings = (toppingName) => {

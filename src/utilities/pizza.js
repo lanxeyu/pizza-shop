@@ -14,10 +14,6 @@ class Pizza {
         }
         return randomName;
     }
-    
-    changeSize(size) {
-        this.size = size
-    }
 
     calculatePrice() {
         const basePrice = {
