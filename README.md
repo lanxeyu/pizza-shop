@@ -11,7 +11,6 @@ This is the frontend website for a pizza ordering app with customizable pizzas, 
 
 ## Future improvements:
 1. Dynamically generate size buttons so that modifying the Pizza class according to changes in the business's size offerings will work seamlessly with the existing code.
-2. Modifying a pizza's size is handled by the Pizza class method, but modifying its toppings is handled by the React component. One or the other should be changed to increase readability and conformity.
-3. Add confirmation dialog box after clicking the 'Place Order' button.
-4. Add confirmation dialog box after clicking the pizza delete button.
-5. Rendering the order confirmation message should be conditional based on the success of sending the order data to the API.
+2. Add confirmation dialog box after clicking the 'Place Order' button.
+3. Add confirmation dialog box after clicking the pizza delete button.
+4. Rendering the order confirmation message should be conditional based on the success of sending the order data to the API.
