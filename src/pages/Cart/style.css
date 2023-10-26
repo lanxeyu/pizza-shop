@@ -15,25 +15,25 @@ button.add-pizza-btn {
     font-size: 25px;
 }
 
-.cart-title {
+.cart-header {
     position: sticky;
-    top: 100px;
+    top: 82px;
 }
 
 .pizza-list {
     display: flex;
     flex-wrap: wrap;
-    align-items:first baseline;
+    align-items: baseline;
     justify-content: center;
     margin: 0 auto;
 }
 
 .pizza-item {
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
-    max-width: auto;
+    min-height: 250px;
+    width: auto;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 10px;
@@ -44,5 +44,7 @@ button.add-pizza-btn {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;
+    margin-bottom: 5px;
 }
 

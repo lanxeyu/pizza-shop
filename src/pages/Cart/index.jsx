@@ -52,13 +52,15 @@ function Cart() {
 
   return (
     <>
-      <Button className="add-pizza-btn" onClick={handleAddPizza}>Add Pizza</Button>
-      <h3 className='cart-title'>Cart:</h3>
+      <div className='cart-header'>
+        <Button className="add-pizza-btn" onClick={handleAddPizza}>Add Pizza</Button>
+        <h3 >Cart:</h3>
+      </div>
 
       {/* Dynamically generate pizza list */}
       <div className='pizza-list col-md-10'>
         {cart.map((pizza, index) => (
-          <Card className='pizza-item text-center col-lg-3 col-md-4 col-xs-8' key={index} >
+          <Card className='text-center pizza-item col-lg-3 col-md-4 col-xs-8' key={index} >
 
             <Card.Header className='pizza-name-and-btns'>
               <h3>Pizza {pizza.name}</h3>
@@ -73,7 +75,6 @@ function Cart() {
                   <Button onClick={handleClose}>Save</Button>
                 </Modal.Footer>
               </Modal>
-
               <CloseButton onClick={() => removeFromCart(index)} />
             </Card.Header>
 
@@ -85,9 +86,9 @@ function Cart() {
                   <p><b>Toppings:</b> No toppings selected</p>
                 )}
             </Card.Body>
+
             <Card.Footer>
               <h5 className='pizza-price'>£{pizza.getPizzaDetails().pizzaPrice}</h5>
-
             </Card.Footer>
           </Card>
         ))}
