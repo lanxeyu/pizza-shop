@@ -23,7 +23,6 @@ button.add-pizza-btn {
 .pizza-list {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
     justify-content: center;
     margin: 0 auto;
 }
@@ -32,8 +31,7 @@ button.add-pizza-btn {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    min-height: 250px;
-    width: auto;
+    width: 400px;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 10px;
@@ -48,3 +46,8 @@ button.add-pizza-btn {
     margin-bottom: 5px;
 }
 
+.card-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
