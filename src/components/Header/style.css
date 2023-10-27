@@ -1,5 +1,19 @@
 .header {
     position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 80px;
     top: 0;
     z-index: 5;
+    background: white;
+}
+
+.logo {
+    position: relative;
+    height: 200px;
+    width: auto;
+    top: 0px;
+    margin-left: 5vw;
+    transition: 0.2s;
 }

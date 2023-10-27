@@ -2,10 +2,9 @@ import { useState } from 'react';
 import { Pizza } from '../../utilities/pizza';
 import { CheckoutFooter, EditPizza } from '../../components';
 import Button from 'react-bootstrap/Button';
-import CloseButton from 'react-bootstrap/CloseButton';
 import Modal from 'react-bootstrap/Modal';
-import Card from 'react-bootstrap/Card';
 import './style.css'
+import ButtonGroup from 'react-bootstrap/esm/ButtonGroup';
 
 function Cart() {
 
@@ -53,49 +52,51 @@ function Cart() {
   return (
     <>
       <div className='cart-header'>
-        <Button className="add-pizza-btn" onClick={handleAddPizza}>Add Pizza</Button>
-        <h3 >Cart:</h3>
+        <Button className='add-pizza-btn' onClick={handleAddPizza}>Add Pizza</Button>
       </div>
 
       {/* Dynamically generate pizza list */}
       <div className='pizza-list col-md-10'>
         {cart.map((pizza, index) => (
-          <Card className='text-center pizza-item col-lg-3 col-md-4 col-xs-8' key={index} >
+          <div className='text-center pizza-item col-lg-3 col-md-4 col-xs-8' key={index} >
 
-            <Card.Header className='pizza-name-and-btns'>
+            <div className='pizza-name-and-btns'>
               <h3>Pizza {pizza.name}</h3>
               
               {/* Edit pizza modal */}
-              <Button onClick={() => handleShowEditModal(index)}>Edit</Button>
-              <Modal show={show[index]} onHide={handleClose} backdrop="static" keyboard={false} aria-labelledby="contained-modal-title-vcenter" centered>
-                <Modal.Body>
-                  <EditPizza pizza={pizza}></EditPizza>
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button onClick={handleClose}>Save</Button>
-                </Modal.Footer>
-              </Modal>
-              <CloseButton onClick={() => removeFromCart(index)} />
-            </Card.Header>
+              <ButtonGroup>
+                <Button variant='secondary' onClick={() => handleShowEditModal(index)}>Edit</Button>
+                <Modal show={show[index]} onHide={handleClose} backdrop="static" keyboard={false} aria-labelledby="contained-modal-title-vcenter" centered>
+                  <Modal.Body>
+                    <EditPizza pizza={pizza}></EditPizza>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button onClick={handleClose}>Save</Button>
+                  </Modal.Footer>
+                </Modal>
+                <Button variant='secondary' onClick={() => removeFromCart(index)}>X</Button>
 
-            <Card.Body className='pizza-details'>
+              </ButtonGroup>
+            </div>
+
+            <div className='pizza-details'>
               <p><b>Size:</b> {pizza.size}</p>
               {pizza.getPizzaDetails().toppings.length > 0 ? (
                   <p><b>Toppings:</b> {pizza.getPizzaDetails().toppings.join(', ')}</p>
                 ) : (
                   <p><b>Toppings:</b> No toppings selected</p>
                 )}
-            </Card.Body>
+            </div>
 
-            <Card.Footer>
+            <div className='my-card-footer'>
               <h5 className='pizza-price'>£{pizza.getPizzaDetails().pizzaPrice}</h5>
-            </Card.Footer>
-          </Card>
+            </div>
+          </div>
         ))}
       </div>    
 
       
-      <div className='checkoutFooter'>
+      <div className='checkoutFooter col-md-10'>
         <CheckoutFooter cart={cart}/>
       </div>
     </>

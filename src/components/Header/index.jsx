@@ -1,21 +1,18 @@
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
 import { Outlet } from 'react-router-dom';
 import Banner from '../Banner';
 import './style.css'
+import './script.js'
 
 function Header() {
   return (
     <>
-        <Banner></Banner>
+      <Banner></Banner>
       <div className='header'>
-          <Navbar expand="lg" className="bg-body-tertiary">
-              <Container>
-                  <Navbar.Brand><h1>Pluto&apos;s Pizza</h1></Navbar.Brand>
-              </Container>
-          </Navbar>
+        <container className='logo-container'>
+          <img className='logo' id='logo' src='/images/pizza-logo.png'></img>
+        </container>
       </div>
-          <Outlet/>
+      <Outlet/>
     </>
   );
 }
