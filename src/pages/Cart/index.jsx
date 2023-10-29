@@ -106,7 +106,7 @@ function Cart() {
                 )}
             </div>
 
-            <div className='my-card-footer'>
+            <div className='pizza-footer'>
               <h5 className='pizza-price'>£{pizza.getPizzaDetails().pizzaPrice}</h5>
             </div>
           </div>
