@@ -18,7 +18,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 40px;
-    z-index: 5;
+    z-index: 100;
 }
 
 button.add-pizza-btn {
@@ -50,6 +50,8 @@ h3.cart-title {
     background: white;
     border-radius: 10px;
     box-shadow: 2px 2px 5px #DAD7D1;
+    z-index: 6;
+
 }
 
 .pizza-name-and-btns {
@@ -57,10 +59,16 @@ h3.cart-title {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    padding-top: 15px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.pizza-icon {
+    position: relative;
+    height: auto;
+    width: 40%;
 }
 
 .pizza-details {

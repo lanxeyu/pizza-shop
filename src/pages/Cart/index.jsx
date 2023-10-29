@@ -67,7 +67,8 @@ function Cart() {
           <div className='text-center pizza-item col-lg-3 col-md-4 col-xs-8' key={index} >
 
             <div className='pizza-name-and-btns'>
-              <h3>Pizza {pizza.name}</h3>
+              <img className='pizza-icon' src='/images/pizza-icon.png'></img>
+              <h3>{index + 1}</h3>
               
               {/* Edit pizza modal */}
               <ButtonGroup>

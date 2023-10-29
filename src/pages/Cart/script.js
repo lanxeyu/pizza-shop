@@ -1,3 +1,4 @@
+import { updateLogo } from "../../components/Header/script";
 
 function updateAddPizzaButtonText() {
     const addPizzaBtn = document.querySelector('.add-pizza-btn');
@@ -8,11 +9,11 @@ function updateAddPizzaButtonText() {
         if (window.innerWidth <= 768) {
             addPizzaBtn.textContent = '+';
             addPizzaBtn.style.fontSize = '40px';
-            addPizzaBtn.style.right = '5vw';
+            addPizzaBtn.style.marginRight = '-20px';
         } else {
             addPizzaBtn.textContent = 'Add Pizza';
             addPizzaBtn.style.fontSize = '25px';
-            addPizzaBtn.style.right = '5vw';
+            addPizzaBtn.style.marginRight = '2vw';
         }
     }
 }
@@ -31,6 +32,7 @@ function updatePizzaListBottomMargin() {
 function updateElements() {
     updateAddPizzaButtonText();
     updatePizzaListBottomMargin();
+    updateLogo();
 }
   
 window.addEventListener('load', updateElements);
