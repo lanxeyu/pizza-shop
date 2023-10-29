@@ -78,7 +78,7 @@ function Cart() {
                     <EditPizza pizza={pizza}></EditPizza>
                   </Modal.Body>
                   <Modal.Footer>
-                    <Button onClick={handleClose}>Save</Button>
+                    <Button variant='warning' onClick={handleClose}>Save</Button>
                   </Modal.Footer>
                 </Modal>
                 <Button variant='outline-dark' onClick={() => removeFromCart(index)}>X</Button>

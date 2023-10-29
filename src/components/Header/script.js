@@ -11,14 +11,11 @@ function updateLogo() {
     const bannerHeight = banner.height
     if (document.body.scrollTop > bannerHeight || document.documentElement.scrollTop > bannerHeight) {
       logo.style.height= "130px";
-      logo.style.top= "12px";
-      logo.style.marginLeft= "10vw";
-  
+      logo.style.top= "12px";  
+
     } else {
       logo.style.height= "200px";
-      logo.style.top= "0px";
-      logo.style.marginLeft= "10vw";
-
+      logo.style.top= "20px";
     }
 
     if (window.innerWidth <= 768) {

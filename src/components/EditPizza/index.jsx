@@ -28,7 +28,7 @@ const EditPizza = ({ pizza }) => {
 
   return (
     <>
-      <h2>Pizza {pizza.name}</h2>
+      {/* <h2>Pizza</h2> */}
 
 
       {/* Size selector */}
@@ -38,13 +38,13 @@ const EditPizza = ({ pizza }) => {
             setSelectedSize(value);
             handleChangeSize(value);
           }}>
-          <ToggleButton id="tbg-radio-1" value={'Small'}>
+          <ToggleButton variant="outline-dark" id="tbg-radio-1" value={'Small'}>
             <h5>Small</h5>(2 toppings incl.)<br></br>+£6.99
           </ToggleButton>
-          <ToggleButton id="tbg-radio-2" value={'Medium'}>
+          <ToggleButton variant="outline-dark" id="tbg-radio-2" value={'Medium'}>
             <h5>Medium</h5>(3 toppings incl.)<br></br>+£8.99
           </ToggleButton>
-          <ToggleButton id="tbg-radio-3" value={'Large'}>
+          <ToggleButton variant="outline-dark" id="tbg-radio-3" value={'Large'}>
             <h5>Large</h5>(5 toppings incl.)<br></br>+£11.99
           </ToggleButton>
         </ToggleButtonGroup>
@@ -59,7 +59,7 @@ const EditPizza = ({ pizza }) => {
 
           {/* Dynamically generate toppings buttons */}
           {availableToppings.map((topping, index) => (
-            <ToggleButton key={index} id={`tbg-check-${index}`} value={topping} onClick={() => handleChangeToppings(topping)} variant="primary">
+            <ToggleButton key={index} id={`tbg-check-${index}`} value={topping} onClick={() => handleChangeToppings(topping)} variant="outline-dark">
               {topping}
             </ToggleButton>
           ))}

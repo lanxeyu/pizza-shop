@@ -6,7 +6,6 @@
     height: 80px;
     top: 0;
     z-index: 10;
-    /* background: white; */
     transition: 0.2s;
 }
 
@@ -14,7 +13,7 @@
     position: relative;
     height: 200px;
     width: auto;
-    top: 0px;
-    margin-left: 40px;
+    top: 20px;
+    margin-left: 10vw;
     transition: 0.2s;
 }
