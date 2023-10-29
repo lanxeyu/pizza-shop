@@ -8,9 +8,9 @@ function Header() {
     <>
       <Banner></Banner>
       <div className='header'>
-        <container className='logo-container'>
+        <div className='logo-div'>
           <img className='logo' id='logo' src='/images/pizza-logo.png'></img>
-        </container>
+        </div>
       </div>
       <Outlet/>
     </>

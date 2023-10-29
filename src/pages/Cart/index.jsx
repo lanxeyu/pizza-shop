@@ -1,16 +1,34 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Pizza } from '../../utilities/pizza';
 import { CheckoutFooter, EditPizza } from '../../components';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import './style.css'
 import ButtonGroup from 'react-bootstrap/esm/ButtonGroup';
+import './script.js'
+import './style.css'
 
 function Cart() {
 
   const [cart, setCart] = useState([]);
   const [show, setShowEditModal] = useState([]);
   const [selectedPizzaIndex, setSelectedPizzaIndex] = useState(null);
+  const [buttonText, setButtonText] = useState('Add Pizza');
+
+  const updateButtonText = () => {
+    if (window.innerWidth <= 768) {
+      setButtonText('+');
+    } else {
+      setButtonText('Add Pizza');
+    }
+  };
+
+  useEffect(() => {
+    updateButtonText();
+    window.addEventListener('resize', updateButtonText);
+    return () => {
+      window.removeEventListener('resize', updateButtonText);
+    };
+  }, []);
 
   const handleAddPizza = () => {
     const pizza = new Pizza();
@@ -52,7 +70,7 @@ function Cart() {
   return (
     <>
       <div className='cart-header'>
-        <Button className='add-pizza-btn' onClick={handleAddPizza}>Add Pizza</Button>
+        <Button variant='warning' className='add-pizza-btn' onClick={handleAddPizza}>{buttonText}</Button>
       </div>
 
       {/* Dynamically generate pizza list */}
@@ -65,7 +83,7 @@ function Cart() {
               
               {/* Edit pizza modal */}
               <ButtonGroup>
-                <Button variant='secondary' onClick={() => handleShowEditModal(index)}>Edit</Button>
+                <Button variant='dark' onClick={() => handleShowEditModal(index)}>Edit</Button>
                 <Modal show={show[index]} onHide={handleClose} backdrop="static" keyboard={false} aria-labelledby="contained-modal-title-vcenter" centered>
                   <Modal.Body>
                     <EditPizza pizza={pizza}></EditPizza>
@@ -74,7 +92,7 @@ function Cart() {
                     <Button onClick={handleClose}>Save</Button>
                   </Modal.Footer>
                 </Modal>
-                <Button variant='secondary' onClick={() => removeFromCart(index)}>X</Button>
+                <Button variant='outline-dark' onClick={() => removeFromCart(index)}>X</Button>
 
               </ButtonGroup>
             </div>
