@@ -23,6 +23,7 @@
 
 button.add-pizza-btn {
     font-size: 25px;
+    box-shadow: 2px 2px 5px #DAD7D1;
 }
 
 h3.cart-title {

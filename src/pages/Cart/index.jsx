@@ -6,28 +6,16 @@ import Modal from 'react-bootstrap/Modal';
 import ButtonGroup from 'react-bootstrap/esm/ButtonGroup';
 import './script.js'
 import './style.css'
+import { updateElements } from './script.js';
 
 function Cart() {
 
   const [cart, setCart] = useState([]);
   const [show, setShowEditModal] = useState([]);
   const [selectedPizzaIndex, setSelectedPizzaIndex] = useState(null);
-  const [buttonText, setButtonText] = useState('Add Pizza');
-
-  const updateButtonText = () => {
-    if (window.innerWidth <= 768) {
-      setButtonText('+');
-    } else {
-      setButtonText('Add Pizza');
-    }
-  };
 
   useEffect(() => {
-    updateButtonText();
-    window.addEventListener('resize', updateButtonText);
-    return () => {
-      window.removeEventListener('resize', updateButtonText);
-    };
+    updateElements();
   }, []);
 
   const handleAddPizza = () => {
@@ -70,7 +58,7 @@ function Cart() {
   return (
     <>
       <div className='cart-header'>
-        <Button variant='warning' className='add-pizza-btn' onClick={handleAddPizza}>{buttonText}</Button>
+        <Button variant='warning' className='add-pizza-btn' onClick={handleAddPizza}>Add Pizza</Button>
       </div>
 
       {/* Dynamically generate pizza list */}

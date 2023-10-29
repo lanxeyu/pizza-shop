@@ -1,14 +1,18 @@
-const addPizzaBtn = document.querySelector('.add-pizza-btn');
 
 function updateAddPizzaButtonText() {
+    const addPizzaBtn = document.querySelector('.add-pizza-btn');
 
     if (addPizzaBtn) {
         addPizzaBtn.addEventListener('click', updatePizzaListBottomMargin)
 
         if (window.innerWidth <= 768) {
             addPizzaBtn.textContent = '+';
+            addPizzaBtn.style.fontSize = '40px';
+            addPizzaBtn.style.right = '5vw';
         } else {
             addPizzaBtn.textContent = 'Add Pizza';
+            addPizzaBtn.style.fontSize = '25px';
+            addPizzaBtn.style.right = '5vw';
         }
     }
 }
@@ -29,10 +33,7 @@ function updateElements() {
     updatePizzaListBottomMargin();
 }
   
-// Call the function on page load and when the window is resized
 window.addEventListener('load', updateElements);
 window.addEventListener('resize', updateElements);
 
-// Immediately call the function on page load
-document.addEventListener('DOMContentLoaded', updateElements);
-  
+export { updateElements }
