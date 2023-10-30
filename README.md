@@ -7,7 +7,7 @@ This is the frontend website for a pizza ordering app with responsive elements, 
 [Backend Repo](https://github.com/lanxeyu/plutos-pizza-server)
 
 ## How to Run Locally:
-1. Clone this repo: `git clone git@github.com:lanxeyu/plutos-pizza-client.git`
+1. Clone this repo: `git clone git@github.com:lanxeyu/pizza-shop.git`
 2. Install dependencies: `npm install`
 3. Start the website: `npm run dev`
 4. Navigate to [localhost:5173](http://localhost:5173/)
