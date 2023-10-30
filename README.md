@@ -1,4 +1,4 @@
-# Pluto's Pizza
+# Pizza Shop
 
 👉 https://pizza-shop-lanxeyu.netlify.app/
 
