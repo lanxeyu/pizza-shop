@@ -12,16 +12,16 @@ const availableToppings = [
 ];
 
 const toppingImages = {
-    Anchovies: 'url-to-anchovies-image',
-    Bacon: 'url-to-bacon-image',
-    Ham: 'url-to-ham-image',
-    Mushrooms: 'url-to-mushrooms-image',
-    Olives: 'url-to-olives-image',
-    Onions: 'url-to-onions-image',
-    Pepperoni: 'url-to-pepperoni-image',
-    Peppers: 'url-to-peppers-image',
-    Pineapple: 'url-to-pineapple-image',
-    Sausage: 'url-to-sausage-image',
+    Anchovies: '/images/toppings/anchovies.jpg',
+    Bacon: '/images/toppings/bacon.jpg',
+    Ham: '/images/toppings/ham.jpg',
+    Mushrooms: '/images/toppings/mushrooms.jpg',
+    Olives: '/images/toppings/olives.jpg',
+    Onions: '/images/toppings/onions.jpg',
+    Pepperoni: '/images/toppings/pepperoni.jpg',
+    Peppers: '/images/toppings/peppers.jpg',
+    Pineapple: '/images/toppings/pineapple.jpg',
+    Sausage: '/images/toppings/sausage.jpg',
 };
 
-export { availableToppings }
+export { availableToppings, toppingImages }

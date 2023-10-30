@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import { calculatePizzaPrice } from '../../utilities/script';
-import { availableToppings } from '../../utilities/toppings';
+import { availableToppings, toppingImages } from '../../utilities/toppings';
 import './style.css'
 
 const EditPizza = ({ pizza }) => {
@@ -47,13 +47,13 @@ const EditPizza = ({ pizza }) => {
             handleChangeSize(value);
           }}>
           <ToggleButton variant="outline-dark" id="tbg-radio-1" value={'Small'}>
-            <h5>Small</h5>(2 toppings incl.)<br></br>+£6.99
+            <h5>Small</h5><p>(2 toppings incl.)</p><h5>+£6.99</h5>
           </ToggleButton>
           <ToggleButton variant="outline-dark" id="tbg-radio-2" value={'Medium'}>
-            <h5>Medium</h5>(3 toppings incl.)<br></br>+£8.99
+            <h5>Medium</h5><p>(3 toppings incl.)</p><h5>+£8.99</h5>
           </ToggleButton>
           <ToggleButton variant="outline-dark" id="tbg-radio-3" value={'Large'}>
-            <h5>Large</h5>(5 toppings incl.)<br></br>+£11.99
+            <h5>Large</h5><p>(5 toppings incl.)</p><h5>+£11.99</h5>
           </ToggleButton>
         </ToggleButtonGroup>
       </div>
@@ -68,13 +68,16 @@ const EditPizza = ({ pizza }) => {
           {/* Dynamically generate toppings buttons */}
           {availableToppings.map((topping, index) => (
             <ToggleButton key={index} id={`tbg-check-${index}`} value={topping} onClick={() => handleChangeToppings(topping)} variant="outline-dark">
-              {topping}
+              <div className="topping-button-contents">
+                <img className='topping-image' src={toppingImages[topping]} alt={topping} />
+                <h5>{topping}</h5>
+              </div>
             </ToggleButton>
           ))}
         </ToggleButtonGroup>
       </div>
 
-      <div className='pizza-price'>
+      <div className='pizza-total-price'>
         <h4>£{pizza.price}</h4>
       </div>
     </>
