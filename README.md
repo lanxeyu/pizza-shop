@@ -1,9 +1,12 @@
 # Pluto's Pizza
+
+👉 https://pizza-shop-lanxeyu.netlify.app/
+
 This is the frontend website for a pizza ordering app with responsive elements, customizable pizzas, data handling across components, push notifications, order tracking, & sales recording in a database. React, Node.js, Express, PostgreSQL, Web-Push, Service Worker
 
 [Backend Repo](https://github.com/lanxeyu/plutos-pizza-server)
 
-## How to Run:
+## How to Run Locally:
 1. Clone this repo: `git clone git@github.com:lanxeyu/plutos-pizza-client.git`
 2. Install dependencies: `npm install`
 3. Start the website: `npm run dev`
