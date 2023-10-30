@@ -33,7 +33,7 @@ function runSendOrderDataToApi(orderData) {
       
       orderData.subscription = subscription
       // Send Push Notification
-      await fetch('http://localhost:3000/orders', {
+      await fetch('https://pizzashop-server.onrender.com/orders', {
           method: "POST",
           body: JSON.stringify(orderData),
           headers: {
