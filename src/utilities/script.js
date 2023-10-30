@@ -72,4 +72,27 @@ function urlBase64ToUint8Array(base64String) {
     return outputArray;
 }
 
-export { availableToppings, generateRandom8DigitNumber, getCurrentDateTime, runSendOrderDataToApi }
+function calculatePizzaPrice(pizza) {
+  const basePrice = {
+      Small: 6.99,
+      Medium: 8.99,
+      Large: 11.99
+  }[pizza.size] || 0
+
+  const includedToppings = {
+      Small: 2,
+      Medium: 3,
+      Large: 5
+  }[pizza.size] || 0
+
+  const selectedToppingsCount = Object.values(pizza.toppings).filter(topping => topping).length
+  const extraToppingCount = Math.max(selectedToppingsCount - includedToppings, 0)
+
+  const extraToppingPrice = 1.49 * extraToppingCount
+
+  const totalPrice = (basePrice + extraToppingPrice).toFixed(2)
+
+  return totalPrice
+}
+
+export { availableToppings, generateRandom8DigitNumber, getCurrentDateTime, runSendOrderDataToApi, calculatePizzaPrice }

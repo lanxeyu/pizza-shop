@@ -4,19 +4,23 @@ import { CheckoutFooter, EditPizza } from '../../components';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import ButtonGroup from 'react-bootstrap/esm/ButtonGroup';
-import './script.js'
 import './style.css'
 import { updateElements } from './script.js';
 
 function Cart() {
-
-  const [cart, setCart] = useState([]);
+  
+  const initialCart = JSON.parse(localStorage.getItem('cart')) || [];
+  const [cart, setCart] = useState(initialCart);
   const [show, setShowEditModal] = useState([]);
   const [selectedPizzaIndex, setSelectedPizzaIndex] = useState(null);
 
   useEffect(() => {
     updateElements();
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
   const handleAddPizza = () => {
     const pizza = new Pizza();
@@ -39,6 +43,7 @@ function Cart() {
 
   const handleClose = () => {
     setShowEditModal((prevShowEditModal) => {
+      localStorage.setItem('cart', JSON.stringify(cart));
       const updatedShowEditModal = [...prevShowEditModal];
       updatedShowEditModal[selectedPizzaIndex] = false;
       return updatedShowEditModal;
@@ -88,15 +93,15 @@ function Cart() {
 
             <div className='pizza-details'>
               <p><b>Size:</b> {pizza.size}</p>
-              {pizza.getPizzaDetails().toppings.length > 0 ? (
-                  <p><b>Toppings:</b> {pizza.getPizzaDetails().toppings.join(', ')}</p>
+              {pizza.toppings.length > 0 ? (
+                  <p><b>Toppings:</b> {pizza.toppings.join(', ')}</p>
                 ) : (
                   <p><b>Toppings:</b> No toppings selected</p>
                 )}
             </div>
 
             <div className='pizza-footer'>
-              <h5 className='pizza-price'>£{pizza.getPizzaDetails().pizzaPrice}</h5>
+              <h5 className='pizza-price'>£{pizza.price}</h5>
             </div>
           </div>
         ))}

@@ -1,8 +1,9 @@
 class Pizza {
     constructor() {
+        this.name = this.generateRandomName();
         this.size = 'Medium';
         this.toppings = [];
-        this.name = this.generateRandomName();
+        this.price = this.calculatePrice();
     }
 
     generateRandomName() {
@@ -33,16 +34,9 @@ class Pizza {
     
         const extraToppingPrice = 1.49 * extraToppingCount
     
-        return basePrice + extraToppingPrice
-    }
-    
-    getPizzaDetails() {
+        const totalPrice = (basePrice + extraToppingPrice).toFixed(2)
 
-        return {
-            size: this.size,
-            toppings: this.toppings,
-            pizzaPrice: this.calculatePrice().toFixed(2)
-        }
+        return totalPrice
     }
 }
 

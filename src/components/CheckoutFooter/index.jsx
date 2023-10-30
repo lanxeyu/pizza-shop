@@ -15,7 +15,7 @@ const CheckoutFooter = ({ cart }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const totalCartPrice = cart.reduce((total, pizza) => total + parseFloat(pizza.getPizzaDetails().pizzaPrice), 0);
+  const totalCartPrice = cart.reduce((total, pizza) => total + parseFloat(pizza.price), 0);
   const revenue = totalCartPrice.toFixed(2)
   const order_number = generateRandom8DigitNumber()
 

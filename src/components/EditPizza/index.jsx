@@ -2,15 +2,21 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
-import { availableToppings } from '../../utilities/script';
+import { availableToppings, calculatePizzaPrice } from '../../utilities/script';
 import './style.css'
 
 const EditPizza = ({ pizza }) => {
   const [selectedSize, setSelectedSize] = useState(pizza.size);
   const [selectedToppings, setSelectedToppings] = useState(pizza.toppings);
 
+  const updatePrice = () => {
+    const price = calculatePizzaPrice(pizza)
+    pizza.price = price;
+  };
+
   const handleChangeSize = (size) => {
     pizza.size = size;
+    updatePrice();
   };
 
   const handleChangeToppings = (toppingName) => {
@@ -24,6 +30,7 @@ const EditPizza = ({ pizza }) => {
 
     setSelectedToppings(updatedToppings);
     pizza.toppings = updatedToppings;
+    updatePrice();
   };
 
   return (
@@ -67,7 +74,7 @@ const EditPizza = ({ pizza }) => {
       </div>
 
       <div className='pizza-price'>
-        <h4>£{pizza.calculatePrice().toFixed(2)}</h4>
+        <h4>£{pizza.price}</h4>
       </div>
     </>
   );
