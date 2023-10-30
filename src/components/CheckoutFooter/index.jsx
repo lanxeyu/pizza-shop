@@ -6,6 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 import Confirmation from '../Confirmation';
 import Form from 'react-bootstrap/Form';
 import { generateRandom8DigitNumber, runSendOrderDataToApi } from '../../utilities/script';
+import './style.css'
 
 const CheckoutFooter = ({ cart }) => {
   const [show, setShow] = useState(false);
@@ -45,8 +46,8 @@ const CheckoutFooter = ({ cart }) => {
           </div>
 
           <div className="col-md-4">
-            <Card.Title>Total: £{totalCartPrice.toFixed(2)}</Card.Title>
-            <Button variant="warning" onClick={handlePlaceOrder} disabled={cart.length === 0}>Place Order</Button>
+            <Card.Title className='total-cart-price'>Total: £{totalCartPrice.toFixed(2)}</Card.Title>
+            <Button className='place-order-btn' variant="warning" onClick={handlePlaceOrder} disabled={cart.length === 0}>Place Order</Button>
           </div>
         </div>
 

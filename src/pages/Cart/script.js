@@ -13,7 +13,7 @@ function updateAddPizzaButtonText() {
             
         } else {
             addPizzaBtn.textContent = 'Add Pizza';
-            addPizzaBtn.style.fontSize = '25px';
+            addPizzaBtn.style.fontSize = '30px';
             addPizzaBtn.style.right = '4vw';
         }
     }
