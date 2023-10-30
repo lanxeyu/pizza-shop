@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 
 const Confirmation = ({ order }) => {
 
+
     return (
         <>
             <h4>Thank you!</h4>
@@ -11,7 +12,11 @@ const Confirmation = ({ order }) => {
             {order.cart.map((pizza, index) => (
             <div key={index}>
                 <h5>Pizza {index + 1}</h5>
-                <p>{pizza.size} - {pizza.toppings.join(', ')}</p>
+                <p>{pizza.size} - {pizza.toppings.length > 0 ? (
+                  <>{pizza.toppings.join(', ')}</>
+                ) : (
+                  <>No toppings</>
+                )}</p>
             </div>
             ))}<br></br>
             <h5>Total: £{order.revenue}</h5>
