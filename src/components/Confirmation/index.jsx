@@ -11,7 +11,7 @@ const Confirmation = ({ order }) => {
             {order.cart.map((pizza, index) => (
             <div key={index}>
                 <h5>Pizza {index + 1}</h5>
-                <p>{pizza.size} - {pizza.getPizzaDetails().toppings.join(', ')}</p>
+                <p>{pizza.size} - {pizza.toppings.join(', ')}</p>
             </div>
             ))}<br></br>
             <h5>Total: £{order.revenue}</h5>
