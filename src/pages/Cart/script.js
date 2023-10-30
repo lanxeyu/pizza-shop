@@ -10,7 +10,7 @@ function updateAddPizzaButtonText() {
             addPizzaBtn.textContent = '+';
             addPizzaBtn.style.fontSize = '40px';
             addPizzaBtn.style.right = '2vw';
-
+            
         } else {
             addPizzaBtn.textContent = 'Add Pizza';
             addPizzaBtn.style.fontSize = '25px';
