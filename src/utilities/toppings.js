@@ -24,4 +24,10 @@ const toppingImages = {
     Sausage: '/images/toppings/sausage.jpg',
 };
 
-export { availableToppings, toppingImages }
+const includedToppings = {
+    Small: 2,
+    Medium: 3,
+    Large: 5
+}
+
+export { availableToppings, toppingImages, includedToppings }

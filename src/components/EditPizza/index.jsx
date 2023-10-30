@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import { calculatePizzaPrice } from '../../utilities/script';
-import { availableToppings, toppingImages } from '../../utilities/toppings';
+import { availableToppings, includedToppings, toppingImages } from '../../utilities/toppings';
 import './style.css'
 
 const EditPizza = ({ pizza }) => {
@@ -60,7 +60,7 @@ const EditPizza = ({ pizza }) => {
 
 
       {/* Toppings selector */}
-      <h4 className='selector-titles'>Toppings</h4>
+      <h4 className='selector-titles'>Toppings ({selectedToppings.length}/{includedToppings[pizza.size]})</h4>
       <p className='selector-titles'>+£1.49 per extra topping</p>
       <div className='toppings-selector'>
         <ToggleButtonGroup vertical type="checkbox" value={selectedToppings} onChange={() => {}} className="mb-2">
@@ -78,7 +78,7 @@ const EditPizza = ({ pizza }) => {
       </div>
 
       <div className='pizza-total-price'>
-        <h4>£{pizza.price}</h4>
+        <h3>£{pizza.price}</h3>
       </div>
     </>
   );
