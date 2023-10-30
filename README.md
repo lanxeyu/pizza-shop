@@ -1,10 +1,10 @@
-# Pizza Shop
+# Pizza Shop Client
 
 👉 https://pizzashop-lanxeyu.netlify.app/
 
 This is the frontend website for a pizza ordering app with responsive elements, customizable pizzas, data handling across components, push notifications, order tracking, & sales recording in a database. React, Node.js, Express, PostgreSQL, Web-Push, Service Worker
 
-[Backend Repo](https://github.com/lanxeyu/plutos-pizza-server)
+[Backend Repo](https://github.com/lanxeyu/pizza-shop-server)
 
 ## How to Run Locally:
 1. Clone this repo: `git clone git@github.com:lanxeyu/pizza-shop.git`
