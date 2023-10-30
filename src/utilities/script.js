@@ -1,16 +1,3 @@
-const availableToppings = [
-    'Anchovies',
-    'Bacon',
-    'Ham',
-    'Mushrooms',
-    'Olives',
-    'Onions',
-    'Pepperoni',
-    'Peppers',
-    'Pineapple',
-    'Sausage',
-];
-
 function generateRandom8DigitNumber() {
     const min = 10000000; 
     const max = 99999999;
@@ -95,4 +82,4 @@ function calculatePizzaPrice(pizza) {
   return totalPrice
 }
 
-export { availableToppings, generateRandom8DigitNumber, getCurrentDateTime, runSendOrderDataToApi, calculatePizzaPrice }
+export { generateRandom8DigitNumber, getCurrentDateTime, runSendOrderDataToApi, calculatePizzaPrice }

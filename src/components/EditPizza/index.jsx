@@ -2,7 +2,8 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
-import { availableToppings, calculatePizzaPrice } from '../../utilities/script';
+import { calculatePizzaPrice } from '../../utilities/script';
+import { availableToppings } from '../../utilities/toppings';
 import './style.css'
 
 const EditPizza = ({ pizza }) => {

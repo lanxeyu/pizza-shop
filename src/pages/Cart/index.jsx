@@ -65,10 +65,7 @@ function Cart() {
 
   return (
     <>
-      <div className='cart-header'>
-        <Button variant='warning' className='add-pizza-btn' onClick={handleAddPizza}>Add Pizza</Button>
-      </div>
-
+      <Button variant='warning' className='add-pizza-btn' onClick={handleAddPizza}>Add Pizza</Button>
       {/* Dynamically generate pizza list */}
       <div className='pizza-list col-md-10'>
         {cart.map((pizza, index) => (

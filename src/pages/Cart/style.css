@@ -5,25 +5,17 @@
 .checkoutFooter {
     position: sticky;
     bottom: 0;
-    z-index: 100;
+    z-index: 90;
     margin: 0 auto;
 }
 
-.cart-header {
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    position: sticky;
-    top: 82px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 40px;
-    z-index: 100;
-}
-
-button.add-pizza-btn {
+.add-pizza-btn {
+    position: fixed;
+    top: 30vh;
+    right: 4vw;
     font-size: 25px;
     box-shadow: 2px 2px 5px #DAD7D1;
+    z-index: 100;
 }
 
 h3.cart-title {
@@ -35,6 +27,7 @@ h3.cart-title {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-top: 80px;
     margin: 0 auto;
 }
 
@@ -51,7 +44,6 @@ h3.cart-title {
     border-radius: 10px;
     box-shadow: 2px 2px 5px #DAD7D1;
     z-index: 6;
-
 }
 
 .pizza-name-and-btns {

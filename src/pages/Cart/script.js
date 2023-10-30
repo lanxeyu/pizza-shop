@@ -9,11 +9,12 @@ function updateAddPizzaButtonText() {
         if (window.innerWidth <= 768) {
             addPizzaBtn.textContent = '+';
             addPizzaBtn.style.fontSize = '40px';
-            addPizzaBtn.style.marginRight = '-20px';
+            addPizzaBtn.style.right = '2vw';
+
         } else {
             addPizzaBtn.textContent = 'Add Pizza';
             addPizzaBtn.style.fontSize = '25px';
-            addPizzaBtn.style.marginRight = '2vw';
+            addPizzaBtn.style.right = '4vw';
         }
     }
 }
