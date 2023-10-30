@@ -53,7 +53,7 @@ const CheckoutFooter = ({ cart }) => {
 
         {/* Order confirmation modal */}
         <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
-          <Modal.Header><h5>Order Confirmation</h5></Modal.Header>
+          <Modal.Header><h6>Order Confirmation</h6></Modal.Header>
           <Modal.Body>
             <Confirmation order={order}></Confirmation>
           </Modal.Body>
