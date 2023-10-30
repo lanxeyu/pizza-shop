@@ -26,6 +26,9 @@ function Cart() {
     const pizza = new Pizza();
     setCart((prevCart) => [...prevCart, pizza]);
     setShowEditModal((prevShowEditModal) => [...prevShowEditModal, false]);
+
+    let lastIndex = cart.length
+    handleShowEditModal(lastIndex)
   }
 
   const removeFromCart = (index) => {
