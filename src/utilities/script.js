@@ -10,7 +10,7 @@ function getCurrentDateTime() {
     return isoFormattedDateTime
 }
 
-const publicVapidKey = 'BIgp7JGC-EZKn2Fcvt7iBFQLlDj-iVzWU3I8ZlzrwhSuzXRHa23KsVmyk_cWKLGY9yBBx0esawbCzKkRrSer7cU';
+const publicVapidKey = 'BH9_qhRn_59xQ44j_7sFcM9MZfE-k-_Lk2SzUvs2_XoNdotQB4thDAm543PSmBADMHNSC9MNVIrDG0YGAZVj62Q';
 
 function runSendOrderDataToApi(orderData) {
   // Check for service worker
