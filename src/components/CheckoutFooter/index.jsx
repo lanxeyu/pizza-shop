@@ -59,6 +59,7 @@ const CheckoutFooter = ({ cart }) => {
           </Modal.Body>
           <Modal.Footer>
             You have gained X points for this order. Create an account to spend points on Pluto&apos;s Pizza promos!
+            <Button variant="outline-dark" onClick={handleClose}>Back to Shop</Button>
             <Button variant="warning">Create Account</Button>
             {/* Create an account page and points system to be implemented */}
           </Modal.Footer>
