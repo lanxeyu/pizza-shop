@@ -2,7 +2,7 @@
 
 👉 https://pizzashop-lanxeyu.netlify.app/
 
-This is the frontend website for a pizza ordering app with responsive elements, customizable pizzas, data handling across components, push notifications, order tracking, & sales recording in a database. React, Node.js, Express, PostgreSQL, Web-Push, Service Worker
+Pizza ordering app with customizable pizzas, data handling, push notifications, order tracking, & sales records. Built with React, Node.js, Express, PostgreSQL, RESTful API, Web-Push, Service Worker.
 
 [Backend Repo](https://github.com/lanxeyu/pizza-shop-server)
 
