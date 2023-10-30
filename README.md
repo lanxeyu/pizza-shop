@@ -1,5 +1,5 @@
 # Pluto's Pizza
-This is the frontend website for a pizza ordering app with customizable pizzas, data handling across components, push notifications, order tracking, & sales recorded in a database. React, Node.js, Express, PostgreSQL, Web-Push, Service Worker
+This is the frontend website for a pizza ordering app with responsive elements, customizable pizzas, data handling across components, push notifications, order tracking, & sales recording in a database. React, Node.js, Express, PostgreSQL, Web-Push, Service Worker
 
 [Backend Repo](https://github.com/lanxeyu/plutos-pizza-server)
 
