@@ -17,3 +17,6 @@ Pizza ordering app with customizable pizzas, data handling, push notifications, 
 2. Add confirmation dialog box after clicking the 'Place Order' button.
 3. Add confirmation dialog box after clicking the pizza delete button.
 4. Rendering the order confirmation message should be conditional based on the success of sending the order data to the API.
+
+## Known Bugs:
+1. Server pushed notifications are not working on the deployed Netlify website, but works on locally hosting the frontend repo.
