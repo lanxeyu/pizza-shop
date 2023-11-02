@@ -71,8 +71,18 @@ h3.cart-title {
     padding-bottom: 10px;
 }
 
-.pizza-footer{
+.pizza-footer {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.edit-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    position: sticky;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    bottom: 20px;
 }

@@ -70,7 +70,7 @@ const EditPizza = ({ pizza }) => {
             <ToggleButton key={index} id={`tbg-check-${index}`} value={topping} onClick={() => handleChangeToppings(topping)} variant="outline-dark">
               <div className="topping-button-contents">
                 <img className='topping-image' src={toppingImages[topping]} alt={topping} />
-                <h5>{topping}</h5>
+                <h6>{topping}</h6>
               </div>
             </ToggleButton>
           ))}
