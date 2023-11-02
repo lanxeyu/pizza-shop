@@ -16,6 +16,12 @@
     font-size: 30px;
     box-shadow: 2px 2px 5px #DAD7D1;
     z-index: 100;
+    transition: 0.2s;
+}
+
+.add-pizza-btn:hover {
+    scale: 1.05;
+    transition: 0.2s;
 }
 
 h3.cart-title {
@@ -44,6 +50,12 @@ h3.cart-title {
     border-radius: 10px;
     box-shadow: 2px 2px 5px #DAD7D1;
     z-index: 6;
+    transition: 0.2s;
+}
+
+.pizza-item:hover {
+    scale: 1.05;
+    transition: 0.2s;
 }
 
 .pizza-name-and-btns {
@@ -90,4 +102,10 @@ h3.cart-title {
 #edit-modal-save-btn {
     font-size: 30px;
     box-shadow: 2px 2px 5px #DAD7D1;
+    transition: 0.2s;
+}
+
+#edit-modal-save-btn:hover {
+    scale: 1.05;
+    transition: 0.2s;
 }

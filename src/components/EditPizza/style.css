@@ -18,6 +18,12 @@
 
 .topping-btn {
     width: 200px;
+    transition: 0.2s;
+}
+
+.topping-btn:hover {
+    scale: 1.02;
+    transition: 0.2s;
 }
 
 .topping-button-contents {
@@ -39,10 +45,10 @@
     justify-content: right;
     align-items: center;
     margin-top: 20px;
+    pointer-events: none;
 }
 
 #pizza-total-price {
     font-size: 35px;
     box-shadow: 2px 2px 5px #DAD7D1;
-
 }
