@@ -45,7 +45,7 @@ const CheckoutFooter = ({ cart }) => {
             </Form.Group>
           </div>
 
-          <div className="col-md-4">
+          <div className="total-cart-price-and-place-order-btn col-md-4">
             <Card.Title id='total-cart-price'>Total: £{totalCartPrice.toFixed(2)}</Card.Title>
             <Button id='place-order-btn' variant="warning" onClick={handlePlaceOrder} disabled={cart.length === 0}>Place Order</Button>
           </div>

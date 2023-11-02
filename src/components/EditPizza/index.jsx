@@ -2,6 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import Badge from 'react-bootstrap/Badge';
 import { calculatePizzaPrice } from '../../utilities/script';
 import { availableToppings, includedToppings, toppingImages } from '../../utilities/toppings';
 import './style.css'
@@ -59,26 +60,27 @@ const EditPizza = ({ pizza }) => {
       </div>
 
 
-      {/* Toppings selector */}
+       {/* Toppings selector */}
       <h4 className='selector-titles'>Toppings ({selectedToppings.length}/{includedToppings[pizza.size]})</h4>
       <p className='selector-titles'>+£1.49 per extra topping</p>
       <div className='toppings-selector'>
-        <ToggleButtonGroup vertical type="checkbox" value={selectedToppings} onChange={() => {}} className="mb-2">
-
-          {/* Dynamically generate toppings buttons */}
-          {availableToppings.map((topping, index) => (
-            <ToggleButton key={index} id={`tbg-check-${index}`} value={topping} onClick={() => handleChangeToppings(topping)} variant="outline-dark">
-              <div className="topping-button-contents">
-                <img className='topping-image' src={toppingImages[topping]} alt={topping} />
-                <h6>{topping}</h6>
-              </div>
-            </ToggleButton>
-          ))}
-        </ToggleButtonGroup>
+        {availableToppings.map((topping, index) => (
+          <ToggleButton className='topping-btn'
+            key={index}
+            variant={selectedToppings.includes(topping) ? 'dark' : 'outline-dark'}
+            value={topping}
+            onClick={() => handleChangeToppings(topping)}
+          >
+            <div className="topping-button-contents">
+              <img className='topping-image' src={toppingImages[topping]} alt={topping} />
+              <h6>{topping}</h6>
+            </div>
+          </ToggleButton>
+        ))}
       </div>
 
       <div className='pizza-total-price'>
-        <h3>£{pizza.price}</h3>
+        <Badge bg="light" text="dark">£{pizza.price}</Badge>
       </div>
     </>
   );

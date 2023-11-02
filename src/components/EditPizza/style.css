@@ -11,14 +11,13 @@
 
 .toppings-selector {
     display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
     justify-content: center;
 }
 
-.pizza-total-price {
-    position: sticky;
-    bottom: 80px;
-    display: flex;
-    justify-content: right;
+.topping-btn {
+    width: 200px;
 }
 
 .topping-button-contents {
@@ -29,6 +28,13 @@
 .topping-image {
     object-fit: contain;
     width: 70px;
-    margin-right: 30px;
+    margin-right: 10px;
     border-radius: 5px;
+}
+
+.pizza-total-price {
+    position: sticky;
+    bottom: 80px;
+    display: flex;
+    justify-content: right;
 }

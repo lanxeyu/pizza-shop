@@ -82,7 +82,7 @@ h3.cart-title {
     align-items: center;
     justify-content: right;
     position: sticky;
+    bottom: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
-    bottom: 20px;
 }
