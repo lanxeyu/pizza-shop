@@ -41,7 +41,7 @@ const CheckoutFooter = ({ cart }) => {
           <div className="col-md-8">
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
               <Form.Label>Allergy information & special notes:</Form.Label>
-              <Form.Control as="textarea" rows={3} value={notes} onChange={(e) => setNotes(e.target.value)}/>
+              <Form.Control as="textarea" rows={1} value={notes} onChange={(e) => setNotes(e.target.value)}/>
             </Form.Group>
           </div>
 
