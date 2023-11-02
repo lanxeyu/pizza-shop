@@ -79,8 +79,8 @@ const EditPizza = ({ pizza }) => {
         ))}
       </div>
 
-      <div className='pizza-total-price'>
-        <Badge bg="light" text="dark">£{pizza.price}</Badge>
+      <div className='pizza-total-price-div'>
+        <Badge pill id='pizza-total-price' bg="dark" text="light">Total: £{pizza.price}</Badge>
       </div>
     </>
   );

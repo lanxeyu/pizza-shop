@@ -32,9 +32,17 @@
     border-radius: 5px;
 }
 
-.pizza-total-price {
+.pizza-total-price-div {
     position: sticky;
-    bottom: 80px;
+    bottom: 90px;
     display: flex;
     justify-content: right;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#pizza-total-price {
+    font-size: 35px;
+    box-shadow: 2px 2px 5px #DAD7D1;
+
 }

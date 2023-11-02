@@ -86,3 +86,8 @@ h3.cart-title {
     margin-right: 20px;
     margin-bottom: 20px;
 }
+
+#edit-modal-save-btn {
+    font-size: 30px;
+    box-shadow: 2px 2px 5px #DAD7D1;
+}
